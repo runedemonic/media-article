@@ -1,0 +1,27 @@
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if request.resolver_match.url_name == "create" %}
+        <h1 class="mt-5 mb-3 fw-bold text-center">리뷰 작성</h1>
+    {% else %}
+        <h1 class="mt-5 mb-3 fw-bold text-center">리뷰 수정</h1>
+    {% endif %}
+
+    <div class="container col-8 py-3 border border-black rounded-3 position-relative">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="d-flex justify-content-end position-absolute" style="top:-50px; right:30px;">
+                <input type="submit" class="btn btn-outline-primary"/>
+            </div>
+            <div class="container">
+                {% csrf_token %}
+                {% bootstrap_form article_form %}
+            </div>
+        </form>
+    </div>
+</body>
+</html>

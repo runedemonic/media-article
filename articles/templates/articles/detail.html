@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container mt-5 border border-3 border-dark rounded">
+        <h1 class="p-3">{{ data.title }}</h1>
+        <div class="container">
+
+            <img src="{{ data.img.url }}" style="height: 400px;" alt="">
+            <p>{{ data.content }}</p>
+
+            <a href="{% url 'articles:update' data.pk %}" class='btn btn-dark text-white mb-3'>수정</a>
+            <a href="{% url 'articles:delete' data.pk %}" class='btn btn-dark text-white mb-3'>삭제</a>
+        </div>
+    </div>
+</body>
+</html>

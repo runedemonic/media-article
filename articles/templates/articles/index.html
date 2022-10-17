@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for list in data %}
+    <div class="item" style="padding-top: 15px;">
+        <p style="text-align: left; font-size: 0.8em;">
+            <a href="{% url 'articles:detail' list.pk %}" class="text-black fw-bold text-decoration-none">
+                <img src="{{ list.thumbnail.url }}" style="width: 100px; height: 100px;" alt=""> <br>
+                <span style="font-weight: bold;">{{ list.title }}</span> <br>
+            </a>
+        </p>
+    </div>
+{% endfor %}
+</body>
+</html>
